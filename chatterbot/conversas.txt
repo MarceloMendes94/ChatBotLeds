@@ -1,0 +1,29 @@
+Olá
+Ei como vai?
+Bem
+Olá
+Oi,tudo bem?
+Sim
+Ei
+Oi, quanto tempo.
+Oque você gostaria de fazer hoje?
+tomar sorvete
+recomendo o de baunilha
+Oque você gostaria de fazer hoje?
+fumar
+Isso faz mal para saúde.
+Oque você gostaria de fazer hoje?
+Beber
+Cerveja ou vinho?
+vinho
+recomendo à você não dirigir hoje
+obrigado
+de nada
+Cerveja ou vinho?
+cerveja
+recomendo à você não dirigir hoje
+obrigado
+de nada
+Oque você gostaria de fazer hoje?
+dormir 
+cuidado você pode ficar sem sono mais tarde
