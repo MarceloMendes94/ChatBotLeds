@@ -36,8 +36,6 @@ def chat():
     #treinando
     trainer = ListTrainer(chatbot)
     trainer.train(lista)
-    trainer.train(lista)
-    trainer.train(lista)
     #conversa
     you=input('voce: ')
     while 'tchau' not in you:
