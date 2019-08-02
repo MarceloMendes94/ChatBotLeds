@@ -15,7 +15,6 @@ def http_cats(bot, update, args):
         photo=HTTP_CATS_URL + args[0]
     )
 
-
 def unknown(bot, update):
     response_message = "Meow? =^._.^="
     bot.send_message(
