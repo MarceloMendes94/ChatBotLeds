@@ -36,13 +36,16 @@ def unknown(bot, update):
 
 def chat_telegram(bot, update):   
     try:
+        chatbot = ChatBot('Charlie')
+        trainer = ListTrainer(chatbot)
+        trainer.train([     "oi",    "oi, tudo bem?",    "ei",    "oi, tudo bem?"])
         # Get the text the user sent
         text = update.message.text
-        chatbot = ChatBot('Charlie')
+        chatbot = ChatBot("Charlie")
         print(type(chatbot))
-        #response = chatbot.get_response(text)
+        response = chatbot.get_response(text)
         bot.sendMessage(chat_id=update.message.chat_id, 
-        text=text)
+        text=response.text)
     except UnicodeEncodeError:
         bot.sendMessage(chat_id=update.message.chat_id, 
         text="Sorry, but I can't summarise your text.")
@@ -56,9 +59,7 @@ def main():
     summarize_handler = MessageHandler(Filters.text, chat_telegram)
     dispatcher.add_handler(summarize_handler)
 
-    chatbot = ChatBot('Charlie')
-    trainer = ListTrainer(chatbot)
-    trainer.train([     "oi",    "oi, tudo bem?",    "ei",    "oi, tudo bem?"])
+
 
     updater.start_polling()
     updater.idle()
