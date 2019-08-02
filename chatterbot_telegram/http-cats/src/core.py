@@ -7,10 +7,7 @@ from conf.settings import TELEGRAM_TOKEN, HTTP_CATS_URL
 import sys
 from chatterbot import ChatBot
 from chatterbot.trainers import ListTrainer
-
-
-
-
+import json
 #-------------------------------------------------------------------------
 
 #funções telegram --------------------------------------------------------
@@ -38,17 +35,24 @@ def chat_telegram(bot, update):
     try:
         chatbot = ChatBot('Charlie')
         trainer = ListTrainer(chatbot)
-        trainer.train([     "oi",    "oi, tudo bem?",    "ei",    "oi, tudo bem?"])
-        # Get the text the user sent
+        trainer.train(treino())
         text = update.message.text
-        chatbot = ChatBot("Charlie")
-        print(type(chatbot))
         response = chatbot.get_response(text)
-        bot.sendMessage(chat_id=update.message.chat_id, 
-        text=response.text)
+        bot.sendMessage(chat_id=update.message.chat_id, text=response.text)
     except UnicodeEncodeError:
         bot.sendMessage(chat_id=update.message.chat_id, 
         text="Sorry, but I can't summarise your text.")
+
+
+def treino():
+    with open('conversas.json') as f:    
+        data = json.load(f)
+    #print (data.keys())
+    lst=[]
+    for chave in data.keys():
+        lst.append(chave)
+        lst.append(data[chave])       
+    return lst
 
 
 def main():
