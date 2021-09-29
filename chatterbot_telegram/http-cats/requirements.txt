@@ -86,7 +86,7 @@ multidict==4.5.2
 murmurhash==1.0.2
 netifaces==0.10.4
 networkx==2.3
-nltk==3.4.4
+nltk==3.6.3
 numpy==1.16.4
 oauth==1.0.1
 olefile==0.45.1
